@@ -1,0 +1,15 @@
+@use "variables" as v;
+
+//Responsivitet//
+
+@mixin tablet {
+    @media screen and (min-width:v.$tablet_breakpoint) {
+        @content;
+    }     
+}
+
+@mixin desktop {
+    @media screen and (min-width:v.$desktop_breakpoint) {
+        @content;
+    }     
+}
