@@ -11,7 +11,11 @@ function close() {
 
 // RESTEN //
 
-let todos = [new Todo("Springa"), new Todo("Gå"), new Todo("Skola")];
+let todos = [
+  new Todo("Springa", false),
+  new Todo("Gå", false),
+  new Todo("Skola", false),
+];
 
 let ul = document.getElementById("theList");
 let liTag = document.getElementsByTagName("LI");
