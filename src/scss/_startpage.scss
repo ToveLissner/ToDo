@@ -29,7 +29,8 @@ body {
 
     ul {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
         padding: 10px;
         gap: 10px;
@@ -59,7 +60,12 @@ body {
             @include m.desktop {
                  
             }
+        }
 
+        .ul__checkbox {
+            height: 20px;
+            width: 20px;
+            border: 1px solid black;
         }
     }
 }

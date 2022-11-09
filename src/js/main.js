@@ -9,8 +9,6 @@ let ul = document.getElementById("theList");
 
 // FUNKTIONER //
 
-function createHTMLHeader() {}
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   addTodo(userInput.value);
@@ -26,7 +24,15 @@ function addTodo(userInput) {
 function createHTML(todos) {
   ul.innerHTML = "";
   for (let i = 0; i < todos.length; i++) {
-    ul.innerHTML += "<li>" + todos[i].title + "</li>";
+    let li = document.createElement("li");
+    let checkButton = document.createElement("button");
+
+    checkButton.type = "checkbox";
+    checkButton.classList = "ul__checkbox";
+
+    li.innerHTML += todos[i].title;
+    ul.appendChild(li);
+    ul.appendChild(checkButton);
   }
 }
 
@@ -46,7 +52,7 @@ function getFromLS() {
 
 getFromLS();
 
-function todoCompleted() {}
+function completedTodo() {}
 
 function deleteTodo() {}
 
