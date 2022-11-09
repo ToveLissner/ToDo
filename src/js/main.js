@@ -15,7 +15,7 @@ form.addEventListener("submit", (event) => {
 });
 
 function addTodo(userInput) {
-  let newTodos = new Todo(userInput, false);
+  let newTodos = new Todo(userInput, false, false);
   todos.push(newTodos);
 
   saveToLS(todos);
@@ -42,6 +42,12 @@ function createHTML(todos) {
       checkButton.classList = "--done";
     }
 
+    if (todos[i].del === true) {
+      li.classList = "delete";
+      checkButton.classList = "delete";
+      deleteButton.classList = "delete";
+    }
+
     ul.appendChild(li);
     ul.appendChild(checkButton);
     ul.appendChild(deleteButton);
@@ -49,13 +55,22 @@ function createHTML(todos) {
     checkButton.addEventListener("click", () => {
       todos[i].done = !todos[i].done;
       createHTML(todos);
+      saveToLS(todos);
     });
 
     deleteButton.addEventListener("click", () => {
-      li.className = "delete";
-      deleteButton.className = "delete";
-      checkButton.className = "delete";
-      console.log(todos[i]);
+      if (
+        confirm("Är du helt säker på att du vill ta bort denna händelse?") ===
+        true
+      ) {
+        todos[i].del = true;
+        createHTML(todos);
+        saveToLS(todos);
+      } else {
+        todos[i].del = false;
+        createHTML(todos);
+        saveToLS(todos);
+      }
     });
   }
 }
@@ -80,4 +95,4 @@ getFromLS();
 
 //KOLLA VAD MER SOM SKULLE GÖRAS//
 
-//CSS SÅ KLART//
+//CSS SÅ KLART
