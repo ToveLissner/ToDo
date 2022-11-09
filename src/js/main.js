@@ -36,20 +36,27 @@ function createHTML(todos) {
     deleteButton.innerHTML = "Delete";
 
     li.innerHTML += todos[i].title;
+
+    if (todos[i].done === true) {
+      li.classList = "done";
+      checkButton.classList = "--done";
+    }
+
     ul.appendChild(li);
     ul.appendChild(checkButton);
     ul.appendChild(deleteButton);
 
     checkButton.addEventListener("click", () => {
-      todos[i].done = true;
-      li.classList.toggle("done");
-      checkButton.classList.toggle("--done");
-      console.log(todos[i]);
+      todos[i].done = !todos[i].done;
+      createHTML(todos);
     });
 
     // deleteButton.addEventListener("click", () => {
-    //   console.log(todos[i]);
-    // });
+    // //   li.className = "delete";
+    // //   deleteButton.className = "delete";
+    // //   checkButton.className = "delete";
+    // //   console.log(todos[i]);
+    // // });
   }
 }
 
