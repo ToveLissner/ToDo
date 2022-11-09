@@ -42,17 +42,16 @@ function createHTML(todos) {
 
     checkButton.addEventListener("click", () => {
       todos[i].done = true;
+      li.classList.toggle("done");
       checkButton.classList.toggle("--done");
       console.log(todos[i]);
     });
 
-    deleteButton.addEventListener("click", deleteTodo);
+    // deleteButton.addEventListener("click", () => {
+    //   console.log(todos[i]);
+    // });
   }
 }
-
-// function completedTodo() {
-//   console.log("klar");
-// }
 
 function saveToLS(todos) {
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -70,12 +69,8 @@ function getFromLS() {
 
 getFromLS();
 
-function undoCompletedTodo() {}
-
-function deleteTodo() {
-  console.log("hej");
-}
-
 //SORTERA//
+
 //KOLLA VAD MER SOM SKULLE GÖRAS//
+
 //CSS SÅ KLART//
