@@ -26,15 +26,33 @@ function createHTML(todos) {
   for (let i = 0; i < todos.length; i++) {
     let li = document.createElement("li");
     let checkButton = document.createElement("button");
+    let deleteButton = document.createElement("button");
 
     checkButton.type = "checkbox";
     checkButton.classList = "ul__checkbox";
 
+    deleteButton.type = "button";
+    deleteButton.classList = "ul__deleteButton";
+    deleteButton.innerHTML = "Delete";
+
     li.innerHTML += todos[i].title;
     ul.appendChild(li);
     ul.appendChild(checkButton);
+    ul.appendChild(deleteButton);
+
+    checkButton.addEventListener("click", () => {
+      todos[i].done = true;
+      checkButton.classList.toggle("--done");
+      console.log(todos[i]);
+    });
+
+    deleteButton.addEventListener("click", deleteTodo);
   }
 }
+
+// function completedTodo() {
+//   console.log("klar");
+// }
 
 function saveToLS(todos) {
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -52,84 +70,12 @@ function getFromLS() {
 
 getFromLS();
 
-function completedTodo() {}
+function undoCompletedTodo() {}
 
-function deleteTodo() {}
+function deleteTodo() {
+  console.log("hej");
+}
 
-// todos = todosObj.map((todo) => {
-//   return new Todo(todo.title, todo.done);
-// });
-
-// let liTag = document.getElementsByTagName("LI");
-
-// // LOOPAR - in i funktioner??? //
-
-// for (let i = 0; i < todos.length; i++) {
-//   ul.innerHTML += "<li>" + todos[i].what + "</li>";
-//   let span = document.createElement("SPAN");
-//   let txt = document.createTextNode("\u00D7");
-//   span.className = "theList__li__span";
-//   span.appendChild(txt);
-//   liTag[i].appendChild(span);
-// }
-
-// let spanClose = document.getElementsByClassName("theList__li__span");
-
-// spanClose.addEventListener("click", close);
-
-// let div = document.getElementById("div");
-
-// console.log(todos);
-
-// function myFunction(myList) {
-//   for (let i = 0; i < myList.length; i++) {
-//     let container = document.createElement("div");
-//     let heading1 = document.createElement("h3");
-//     button1 = document.createElement("button");
-
-//     //let pTag1 = document.createElement("p");
-
-//     container.classList = "container";
-//     heading1.classList = "container__what";
-//     button1.classList = "container__button";
-//     //pTag1.classList = "container__where";
-//     heading1.innerHTML += myList[i].what;
-//     button1.innerHTML += "klar";
-//     //pTag1.innerHTML += myList[i].where;
-
-//     container.appendChild(heading1);
-//     container.appendChild(button1);
-//     //container.appendChild(pTag1);
-
-//     div.appendChild(container);
-//   }
-// }
-
-// myFunction(todos);
-
-// let inputElement = document.getElementById("userInput");
-
-// let theText = inputElement.value;
-
-// console.log(theText);
-
-// // let inputNew = document.getElementById("inputNew");
-
-// // inputNew.addEventListener("click", addNew);
-
-// //function addNew(todo) {
-// //todos.push(todo);
-// //myFunction(todo);
-// //
-
-// // till html <div id="newTask">
-// // <input type="text" id="userInput" value="">
-// // <button type="button" id="buttonAdd">Lägg till</button> </div>
-
-// // let addButton = document.getElementById("buttonAdd");
-
-// // function addClick() {
-// // console.log("klick hände");
-// // }
-
-// // addButton.addEventListener("click", addClick);
+//SORTERA//
+//KOLLA VAD MER SOM SKULLE GÖRAS//
+//CSS SÅ KLART//
