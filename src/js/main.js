@@ -51,12 +51,12 @@ function createHTML(todos) {
       createHTML(todos);
     });
 
-    // deleteButton.addEventListener("click", () => {
-    // //   li.className = "delete";
-    // //   deleteButton.className = "delete";
-    // //   checkButton.className = "delete";
-    // //   console.log(todos[i]);
-    // // });
+    deleteButton.addEventListener("click", () => {
+      li.className = "delete";
+      deleteButton.className = "delete";
+      checkButton.className = "delete";
+      console.log(todos[i]);
+    });
   }
 }
 
