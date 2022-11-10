@@ -23,6 +23,8 @@ function addTodo(userInput) {
   saveToLS(todos);
 }
 
+let i = 0;
+
 function createHTML(todos) {
   ul.innerHTML = "";
   for (let i = 0; i < todos.length; i++) {
@@ -102,12 +104,23 @@ function createHTML(todos) {
         saveToLS(todos);
       }
     });
-
-    // sortButton.addEventListener("click", () => {
-    //   todos.sort();
-    // });
   }
 }
+
+// sortButton.addEventListener("click", () => {
+//   let sortedList = todos.title;
+//   sortedList.sort();
+// });
+
+sortButton.addEventListener("click", handleClick);
+
+function handleClick() {
+  getFromLS();
+  todos[i].sort();
+}
+
+// // if (((todos[i].del = false), (todos[i].del2 = false))) {
+// //   ul.title.sort();
 
 function saveToLS(todos) {
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -116,7 +129,6 @@ function saveToLS(todos) {
 
 function getFromLS() {
   let fromLS = localStorage.getItem("todos");
-  todos.sort();
   if (fromLS) {
     todos = JSON.parse(fromLS);
     createHTML(todos);
