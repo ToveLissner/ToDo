@@ -23,8 +23,6 @@ function addTodo(userInput) {
   saveToLS(todos);
 }
 
-let i = 0;
-
 function createHTML(todos) {
   ul.innerHTML = "";
   for (let i = 0; i < todos.length; i++) {
@@ -115,8 +113,9 @@ function createHTML(todos) {
 sortButton.addEventListener("click", handleClick);
 
 function handleClick() {
-  getFromLS();
-  todos[i].sort();
+  i = 0;
+  getFromLS(todos);
+  todos[i].title.sort();
 }
 
 // // if (((todos[i].del = false), (todos[i].del2 = false))) {
