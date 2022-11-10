@@ -13,3 +13,9 @@
         @content;
     }     
 }
+
+// Knappar //
+
+@mixin button {
+    background-color: yellow;
+}

@@ -33,7 +33,6 @@ body {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        //padding: 10px;
         gap: 10px;
         width: 80%;
 
@@ -47,7 +46,7 @@ body {
 
         li {
             list-style: none;
-            width: 60%;
+            width: 30%;
             background-color: white;
             border: 1px solid rgb(235, 71, 128);
             text-align: center;
@@ -71,19 +70,17 @@ body {
             display: none;
         }
 
-        .ul__checkbox {
-            height: 20px;
-            width: 20px;
-            border: 1px solid black;
+        .ul__checkbutton {
+            @include m.button;
         }
 
         .--done {
-            height: 20px;
-            width: 20px;
             border: 1px solid black;
-            background-color: black;
+            
         }
 
 
     }
 }
+
+//   cursor: pointer; //
