@@ -7,6 +7,7 @@ let userInput = document.getElementById("userInput");
 
 let ul = document.getElementById("theList");
 let button1234 = document.getElementById("button1234");
+let sortButton = document.getElementById("sortButton");
 
 // FUNKTIONER //
 
@@ -101,17 +102,21 @@ function createHTML(todos) {
         saveToLS(todos);
       }
     });
+
+    // sortButton.addEventListener("click", () => {
+    //   todos.sort();
+    // });
   }
 }
 
 function saveToLS(todos) {
   localStorage.setItem("todos", JSON.stringify(todos));
-
   createHTML(todos);
 }
 
 function getFromLS() {
   let fromLS = localStorage.getItem("todos");
+  todos.sort();
   if (fromLS) {
     todos = JSON.parse(fromLS);
     createHTML(todos);
