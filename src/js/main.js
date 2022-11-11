@@ -28,6 +28,8 @@ function addTodo(userInput) {
 
 function createHTML(todos) {
   ul.innerHTML = "";
+  userInput.value = "";
+
   for (let i = 0; i < todos.length; i++) {
     let li = document.createElement("li");
     let checkButton = document.createElement("button");
@@ -105,26 +107,15 @@ function createHTML(todos) {
         saveToLS(todos);
       }
     });
-
-    // sortButton.addEventListener("click", () => {
-    //   for (let i = 0; i < todos.length; i++) {
-    //     todos.sort((a, b) => a.title.localCompare(b.title));
-    //     createHTML(todos);
-    //     saveToLS(todos);
-    //   }
-    // });
   }
 }
 
-// sortButton.addEventListener("click", handleClick);
+sortButton.addEventListener("click", handleClick);
 
-// function handleClick() {
-//   let newFromLS = localStorage.getItem("todos");
-//   for (let i = 0; i < newFromLS.length; i++) {
-//     console.log(newFromLS);
-//     newFromLS.sort((a, b) => a.title.localCompare(b.title));
-//   }
-// }
+function handleClick() {
+  let sortedTodos = todos.sort((a, b) => a.title.localeCompare(b.title));
+  createHTML(todos);
+}
 
 function saveToLS(todos) {
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -133,9 +124,6 @@ function saveToLS(todos) {
 
 function getFromLS() {
   let fromLS = localStorage.getItem("todos");
-  // if (dosort) {
-  //   fromLS.sort();
-  // }
   if (fromLS) {
     todos = JSON.parse(fromLS);
     createHTML(todos);
