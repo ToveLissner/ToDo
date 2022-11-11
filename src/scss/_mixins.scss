@@ -14,14 +14,20 @@
     }     
 }
 
+@mixin desktoplarge {
+    @media screen and (min-width:v.$desktoplarge_breakpoint) {
+        @content;
+    }     
+}
+
 // Knappar //
 
 @mixin button {
     background-color: white;
     display: inline;
     height: 30px;
+    border: 1px solid black;
     
-    :hover {
-        cursor: pointer;
-    }
+    cursor: pointer;
+
 }

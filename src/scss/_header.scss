@@ -8,12 +8,17 @@ header {
     margin-bottom: 60px;
 
     @include m.tablet {
-        margin-top: 20%;  
+        margin-top: 15%;  
         margin-bottom: 50px;;          
     }
 
     @include m.desktop {
-        
+        margin-top: 10%;
+    }
+
+    @include m.desktoplarge {
+        margin-top: 5%;
+         
     }
 
     h1 {

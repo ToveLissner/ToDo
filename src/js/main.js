@@ -95,7 +95,7 @@ function createHTML(todos) {
     deleteButton2.addEventListener("click", () => {
       if (
         confirm(
-          "Är du helt säker på att du vill ta bort denna händelse? Åtgärden går ej att ångra."
+          "Denna åtgärd går ej att ångra. Är du helt säker på att du vill ta bort denna händelse?"
         ) === true
       ) {
         todos[i].del2 = true;
@@ -132,34 +132,26 @@ function getFromLS() {
 
 getFromLS();
 
-//SORTERA//
+//KOLLA VAD MER SOM SKULLE GÖRAS// 3
 
-//DELETE//
+//CSS 100// 4
 
-//KOLLA VAD MER SOM SKULLE GÖRAS//
+//GITHUB// 2
 
-//CSS SÅ KLART//
+//HEADER// 3
 
-//HTML//
+//NAMN// 2
 
-//CSS 100//
+//KNAPPAR// 2
 
-//GITHUB//
+//Responsitivitet// 3
 
-//HEADER//
+//SORTERING 100// 2
 
-//NAMN//
+//VAD KVAR// 4
 
-//KNAPPAR//
+//ALLT 100// 4
 
-//XXXX//
+//JS// 3
 
-//SORTERING 100//
-
-//VAD KVAR//
-
-//ALLT 100//
-
-//JS//
-
-//GH//
+//GH// 4

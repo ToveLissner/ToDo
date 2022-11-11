@@ -17,7 +17,7 @@ body {
         input {
             padding: 10px;
             border: 1px solid black;
-            width: 75%;
+            width: 80%;
             background-color: white;;
 
             @include m.tablet {
@@ -37,36 +37,49 @@ body {
         justify-content: center;
         align-items: center;
         gap: 10px;
-        width: 80%;
+        width: 100%;
+        padding: 0px;
 
         @include m.tablet {
-            width: 100%;
+            
         }
 
         @include m.desktop {
             
         }
 
+        @include m.desktoplarge {
+            width: 50%;  
+        }
+        
+
         li {
             list-style: none;
-            width: 30%;
+            width: 80%;
             background-color: white;
             border: 1px solid rgb(235, 71, 128);
             text-align: center;
             padding: 10px;
 
             @include m.tablet {
+                width: 30%;
                 text-align: left;
             }
      
             @include m.desktop {
-                width: 50%;
+                width: 40%;
                  
+            }
+
+            @include m.desktoplarge {
+
             }
         }
 
         .done {
             text-decoration-line: line-through;
+            border: 1px solid rgb(87, 235, 71);
+            color: grey;
         }
 
         .delete {
@@ -79,14 +92,13 @@ body {
 
         .--done {
             @include m.button;
-            color: grey;    
+            color: grey;
+            border: 1px solid grey;
         }
 
         .ul__deleteButton {
             @include m.button;
         }
-
-
 
     }
 
