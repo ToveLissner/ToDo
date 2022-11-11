@@ -81,6 +81,13 @@ body {
 
 
     }
+
+    .sortButton {
+        @include m.button;
+    }
+
+    .button1234 {
+        @include m.button;
+    }
 }
 
-//   cursor: pointer; //

@@ -17,5 +17,10 @@
 // Knappar //
 
 @mixin button {
-    background-color: yellow;
+    background-color: white;
+    display: inline;
+    
+    :hover {
+        cursor: pointer;
+    }
 }

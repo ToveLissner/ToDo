@@ -6,8 +6,11 @@ let form = document.getElementById("form");
 let userInput = document.getElementById("userInput");
 
 let ul = document.getElementById("theList");
-let button1234 = document.getElementById("button1234");
 let sortButton = document.getElementById("sortButton");
+let button1234 = document.getElementById("button1234");
+
+sortButton.classList = "sortbutton";
+button1234.classList = "button1234";
 
 // FUNKTIONER //
 
@@ -105,21 +108,13 @@ function createHTML(todos) {
   }
 }
 
-// sortButton.addEventListener("click", () => {
-//   let sortedList = todos.title;
-//   sortedList.sort();
-// });
-
 sortButton.addEventListener("click", handleClick);
 
 function handleClick() {
-  i = 0;
-  getFromLS(todos);
-  todos[i].title.sort();
+  let newFromLS = localStorage.getItem("todos");
+  console.log(newFromLS.title);
+  newFromLS.sort((a, b) => a.title.localCompare(b.title));
 }
-
-// // if (((todos[i].del = false), (todos[i].del2 = false))) {
-// //   ul.title.sort();
 
 function saveToLS(todos) {
   localStorage.setItem("todos", JSON.stringify(todos));
