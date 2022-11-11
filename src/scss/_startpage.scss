@@ -5,6 +5,9 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 
     form {
         display:flex;
@@ -70,24 +73,31 @@ body {
             display: none;
         }
 
-        .ul__checkbutton {
+        .ul__checkButton {
             @include m.button;
         }
 
         .--done {
-            border: 1px solid black;
-            
+            @include m.button;
+            color: grey;    
         }
+
+        .ul__deleteButton {
+            @include m.button;
+        }
+
 
 
     }
 
     .sortButton {
         @include m.button;
+        width: 200px;
     }
 
     .button1234 {
         @include m.button;
+        width: 200px;
     }
 }
 

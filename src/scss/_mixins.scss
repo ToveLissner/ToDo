@@ -19,6 +19,7 @@
 @mixin button {
     background-color: white;
     display: inline;
+    height: 30px;
     
     :hover {
         cursor: pointer;

@@ -9,7 +9,7 @@ let ul = document.getElementById("theList");
 let sortButton = document.getElementById("sortButton");
 let button1234 = document.getElementById("button1234");
 
-sortButton.classList = "sortbutton";
+sortButton.classList = "sortButton";
 button1234.classList = "button1234";
 
 // FUNKTIONER //
@@ -35,7 +35,7 @@ function createHTML(todos) {
     let deleteButton2 = document.createElement("button");
 
     checkButton.type = "button";
-    checkButton.classList = "ul__checkbutton";
+    checkButton.classList = "ul__checkButton";
     checkButton.innerHTML = "Markera/avmarkera";
 
     deleteButton.type = "button";
@@ -105,16 +105,26 @@ function createHTML(todos) {
         saveToLS(todos);
       }
     });
+
+    // sortButton.addEventListener("click", () => {
+    //   for (let i = 0; i < todos.length; i++) {
+    //     todos.sort((a, b) => a.title.localCompare(b.title));
+    //     createHTML(todos);
+    //     saveToLS(todos);
+    //   }
+    // });
   }
 }
 
-sortButton.addEventListener("click", handleClick);
+// sortButton.addEventListener("click", handleClick);
 
-function handleClick() {
-  let newFromLS = localStorage.getItem("todos");
-  console.log(newFromLS.title);
-  newFromLS.sort((a, b) => a.title.localCompare(b.title));
-}
+// function handleClick() {
+//   let newFromLS = localStorage.getItem("todos");
+//   for (let i = 0; i < newFromLS.length; i++) {
+//     console.log(newFromLS);
+//     newFromLS.sort((a, b) => a.title.localCompare(b.title));
+//   }
+// }
 
 function saveToLS(todos) {
   localStorage.setItem("todos", JSON.stringify(todos));
