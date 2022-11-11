@@ -133,6 +133,9 @@ function saveToLS(todos) {
 
 function getFromLS() {
   let fromLS = localStorage.getItem("todos");
+  // if (dosort) {
+  //   fromLS.sort();
+  // }
   if (fromLS) {
     todos = JSON.parse(fromLS);
     createHTML(todos);
