@@ -12,8 +12,6 @@ let button1234 = document.getElementById("button1234");
 sortButton.classList = "sortButton";
 button1234.classList = "button1234";
 
-// FUNKTIONER //
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   addTodo(userInput.value);
@@ -131,27 +129,3 @@ function getFromLS() {
 }
 
 getFromLS();
-
-//KOLLA VAD MER SOM SKULLE GÖRAS// 3
-
-//CSS 100// 4
-
-//GITHUB// 2
-
-//HEADER// 3
-
-//NAMN// 2
-
-//KNAPPAR// 2
-
-//Responsitivitet// 3
-
-//SORTERING 100// 2
-
-//VAD KVAR// 4
-
-//ALLT 100// 4
-
-//JS// 3
-
-//GH// 4
